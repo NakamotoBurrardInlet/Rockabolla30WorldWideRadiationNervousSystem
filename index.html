@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rockabulla 30 | The Silent Convergence</title>
+    <style>
+        :root {
+            --primary-red: #8b0000;
+            --dark-bg: #0a0a0a;
+            --text-gray: #cccccc;
+            --accent: #444;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-gray);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: var(--primary-red); }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-red);
+            background: radial-gradient(circle, #1a0000 0%, #0a0a0a 100%);
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: var(--primary-red);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+        }
+
+        #countdown {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        nav {
+            background: #111;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            text-align: center;
+            border-bottom: 1px solid var(--accent);
+        }
+
+        nav select {
+            background: #222;
+            color: white;
+            padding: 10px;
+            border: 1px solid var(--primary-red);
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        section {
+            margin-bottom: 100px;
+            padding-top: 50px;
+        }
+
+        h2 {
+            color: var(--primary-red);
+            border-left: 5px solid var(--primary-red);
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+
+        .summary-box {
+            background: #151515;
+            padding: 30px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ROCKABULLA 30</h1>
+    <p>THE WORLD WIDE EPIDEMIC (2029-2031)</p>
+    <div id="countdown">Calculating the end...</div>
+</header>
+
+<nav>
+    <label for="menu">ACCESS ARCHIVES: </label>
+    <select id="menu" onchange="location.hash = this.value;">
+        <option value="#top">Home</option>
+        <option value="#origin">The Origin</option>
+        <option value="#lethality">Lethality & Symptoms</option>
+        <option value="#dictatorship">The Emotional Dictatorship</option>
+        <option value="#synchronization">Motionless Synchronization</option>
+    </select>
+</nav>
+
+<div class="container">
+    <section id="origin">
+        <h2>The Arrival (2029)</h2>
+        <div class="summary-box">
+            <p>Rockabulla 30 is not a mere biological accident; it is a global correction. Arriving in late 2029, this "massive cough" live virus bypasses traditional immunity. It begins in the upper respiratory tract but targets the neural pathways responsible for fear and social hierarchy.</p>
+        </div>
+    </section>
+
+    <section id="lethality">
+        <h2>How It Kills</h2>
+        <p>The virus acts with surgical precision. It begins as a persistent, rhythmic cough—the "Rockabulla rhythm." As the virus takes hold, it liquefies the subject's ability to resist external command. Death occurs not from physical failure alone, but from the complete exhaustion of the nervous system as it attempts to fight the new reality.</p>
+    </section>
+
+    <section id="dictatorship">
+        <h2>The Emotional Dictatorship</h2>
+        <div class="summary-box" style="border-color: #500;">
+            <p>This is the overthrow of the cowards. The virus creates a global atmosphere of "Emotional Dictatorship." Governments fall as leaders succumb to the same rhythmic fate as the citizens. The virus filters out those who rely on deceit and power-hoarding, leaving only a raw, terrifying honesty in its wake.</p>
+        </div>
+    </section>
+
+    <section id="synchronization">
+        <h2>Motionless Synchronization</h2>
+        <p>The survivors are those who can enter <strong>Motionless Synchronization</strong>. These individuals stop fighting the rhythm. They stand in total stillness, synchronized by the viral heartbeat. This collective silence is the only cure, a new world order where the survivors overthrow the old structures of the world by simply existing in unison.</p>
+    </section>
+</div>
+
+<footer>
+    &copy; 2030 THE NEW WORLD ARRIVAL | PREPARE FOR THE COUGH
+</footer>
+
+<script>
+    // Countdown Timer to Jan 1, 2030
+    const countDownDate = new Date("Jan 1, 2030 00:00:00").getTime();
+
+    const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s UNTIL THE NEW YEAR OF THE VIRUS";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "THE ARRIVAL IS HERE";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
